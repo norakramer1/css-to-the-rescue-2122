@@ -1,0 +1,28 @@
+html {
+    background-color: rgb(50, 50, 44);
+}
+
+ul li {
+    list-style: none;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    top: 95%;
+    left: 50%;
+    animation: firework 1s cubic-bezier(0.73,-0.1,0.24,1.22);;
+}
+
+@keyframes firework {
+
+    0% {
+        top: 95%;
+        left: 50%;
+    }
+
+    100% {
+        top: 10%;
+        left: 50%;
+    }
+    
+}
