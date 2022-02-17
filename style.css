@@ -19,6 +19,7 @@ html {
 } */
 
 
+ul li:not(:first-child) {
     list-style: none;
     position: absolute;
     width: 2px;
