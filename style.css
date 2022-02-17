@@ -1,8 +1,10 @@
+
+
 html {
     background-color: rgb(50, 50, 44);
 }
 
-ul li {
+/* ul li:nth-child(1) {
     list-style: none;
     position: absolute;
     width: 5px;
@@ -10,7 +12,64 @@ ul li {
     background-color: white;
     top: 95%;
     left: 50%;
-    animation: firework 1s cubic-bezier(0.73,-0.1,0.24,1.22);;
+    animation: firework 1s cubic-bezier(0.73,-0.1,0.24,1.22);
+    opacity: 0; 
+    animation-delay: 2s; 
+   
+} */
+
+
+    list-style: none;
+    position: absolute;
+    width: 2px;
+    height: 40px;
+    /* background-color: white; */
+    top: 50%;
+    left: 50%;
+    transform-origin: 100% 100%;
+    animation: fireworkAnimation 1s cubic-bezier(0.73,-0.1,0.24,1.22);
+    opacity: 1;
+    animation-delay: 2.5s;
+    background-image: linear-gradient(
+  rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 95%);
+}
+
+
+ul li:first-child {
+    list-style: none;
+    position: absolute;
+    animation: firework 2s cubic-bezier(0.73,-0.1,0.24,1.22);
+    background-color: red;
+    opacity: 0;
+    top: 95%;
+    left: 50%;
+    width: 2px;
+    height: 30px;
+}
+
+
+ul li:nth-child(2) {
+    transform: rotate(72deg) translateY(-15px);
+    
+}
+
+ul li:nth-child(3) {
+   
+    transform: rotate(144deg) translateY(-15px);
+}
+
+ul li:nth-child(4) {
+    transform: rotate(216deg) translateY(-15px);
+   
+}
+
+ul li:nth-child(5) {
+    transform: rotate(288deg) translateY(-15px);
+    
+}
+
+ul li:nth-child(6) {
+    transform: rotate(0deg) translateY(-15px);
 }
 
 @keyframes firework {
@@ -18,11 +77,37 @@ ul li {
     0% {
         top: 95%;
         left: 50%;
+        opacity: 1;  
+
+    }
+
+    90% {
+        left: 50%;
+        opacity: 1;  
+
     }
 
     100% {
         top: 10%;
         left: 50%;
+        opacity: 0;  
     }
     
 }
+
+@keyframes fireworkAnimation {
+    0% {
+        top: 15%;
+        left: 50%;
+        opacity: 0;
+    }
+
+    100% {
+    
+        top: 95%;
+        left: 50%;
+        opacity: 1;
+
+    }
+}
+
