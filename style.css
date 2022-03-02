@@ -4,75 +4,86 @@ html {
     background-color: rgb(50, 50, 44);
 }
 
-/* ul li:nth-child(1) {
-    list-style: none;
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background-color: white;
-    top: 95%;
-    left: 50%;
-    animation: firework 1s cubic-bezier(0.73,-0.1,0.24,1.22);
-    opacity: 0; 
-    animation-delay: 2s; 
-   
-} */
+li:nth-of-type(1) { --index:1; }
+li:nth-of-type(2) { --index:2; }
+li:nth-of-type(3) { --index:3; }
+li:nth-of-type(4) { --index:4; }
+li:nth-of-type(5) { --index:5; }
+li:nth-of-type(6) { --index:6; }
+li:nth-of-type(7) { --index:7; }
+li:nth-of-type(8) { --index:8; }
 
-
-ul li:not(:first-child) {
-    list-style: none;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    /* background-color: white; */
-    top: 50%;
-    left: 50%;
-    transform-origin: 0% 0%;
-    animation: fireworkAnimation 1s cubic-bezier(0.73,-0.1,0.24,1.22);
-    opacity: 1;
-    animation-delay: 2.5s;
-    border-radius: 50%;
-    background-image: linear-gradient(
-  rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 95%);
+ul li {
+     --hoekVar:360deg;
 }
 
-
-ul li:first-child {
+ ul li {
     list-style: none;
     position: absolute;
-    animation: firework 2s cubic-bezier(0.73,-0.1,0.24,1.22);
+    /* animation: firework 2s cubic-bezier(0.73,-0.1,0.24,1.22);
     background-color: red;
     opacity: 0;
     top: 95%;
     left: 50%;
     width: 2px;
-    height: 30px;
+    height: 30px; */
+} 
+
+ul:nth-of-type(1) li {
+    list-style: none;
+    position: absolute;
+    width: 5px;
+    height: 20px;
+    top: 15%;
+    left: 30%;
+    background-color: rgb(255, 0, 0);
+    /* background-image: radial-gradient(
+  rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 95%); */
+    --hoekVar:30deg;
+ 	transform-origin:center top;
+    transform:rotate( calc( var(--hoekVar)  - var(--hoekVar) *14/7 * (var(--index) - 1)  ) ) scaley(.2);
+    transition:2s;
+    animation: fireworkAnimation 1s cubic-bezier(0.73,-0.1,0.24,1.22);
+    opacity: 0;
+    animation-delay: 2.5s;
 }
 
-
-ul li:nth-child(2) {
-    transform: rotate(72deg) translateY(-15px);
-    
+ul:nth-of-type(2) li {
+    list-style: none;
+    position: absolute;
+    width: 5px;
+    height: 20px;
+    top: 50%;
+    left: 70%;
+    background-color: rgb(255, 238, 0);
+    --hoekVar:30deg;
+ 	transform-origin:center top;
+    transform:rotate( calc( var(--hoekVar) - var(--hoekVar) *14/7 * (var(--index) - 1)  ) );
+    transition:2s;
+    animation: fireworkAnimation 1s cubic-bezier(0.73,-0.1,0.24,1.22);
+    opacity: 0;
+    animation-delay: 3s;
 }
 
-ul li:nth-child(3) {
-   
-    transform: rotate(144deg) translateY(-15px);
+ul:nth-of-type(3) li {
+    list-style: none;
+    position: absolute;
+    width: 5px;
+    height: 20px;
+    top: 70%;
+    left: 50%;
+    background-color: rgb(255, 0, 212);
+    --hoekVar:30deg;
+ 	transform-origin:center top;
+    transform:rotate( calc( var(--hoekVar) - var(--hoekVar) * 14/7 * (var(--index) - 1)  ) );
+    transition:2s;
+    animation: fireworkAnimation 1s cubic-bezier(0.73,-0.1,0.24,1.22);
+    opacity: 0;
+    animation-delay: 3.5s;
 }
 
-ul li:nth-child(4) {
-    transform: rotate(216deg) translateY(-15px);
-   
-}
+/* transform:rotate( calc( var(--hoekVar) * 7/7 * (var(--index))  ) ); */
 
-ul li:nth-child(5) {
-    transform: rotate(288deg) translateY(-15px);
-    
-}
-
-ul li:nth-child(6) {
-    transform: rotate(0deg) translateY(-15px);
-}
 
 @keyframes firework {
 
@@ -92,26 +103,28 @@ ul li:nth-child(6) {
     100% {
         top: 10%;
         left: 50%;
-        opacity: 0;  
+        opacity: 1;  
     }
     
 }
 
 @keyframes fireworkAnimation {
     0% {
-
-        top: 15%;
-        left: 50%;
-        opacity: 0;
+        /* top: 15%;
+        left: 50%; */
+        opacity: 1;
     }
 
     100% {
-    
-        top: 95%;
-        left: 50%;
+
+        /* top: 20%;
+        left: 50%; */
         opacity: 1;
-        transform-origin: 100% 100%; 
+        transform:rotate( calc( var(--hoekVar)  - var(--hoekVar) * 14/7 * (var(--index) - 1)  ) ) scaley(1) translatey(6em);
+        opacity:0;
+    
 
     }
 }
+
 
