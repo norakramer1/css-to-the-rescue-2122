@@ -1,7 +1,9 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+ 
 
 html {
-    background-color: rgb(50, 50, 44);
+    background-color: rgb(22, 23, 27);
 }
 
 li:nth-of-type(1) { --index:1; }
@@ -13,118 +15,126 @@ li:nth-of-type(6) { --index:6; }
 li:nth-of-type(7) { --index:7; }
 li:nth-of-type(8) { --index:8; }
 
-ul li {
-     --hoekVar:360deg;
+:root * {
+    --hoekVar: calc(360deg / 8);
+    --rotate: rotate(calc( var(--hoekVar) * var(--index) ));
+}
+   
+ul{
+    background-color: rgb(63,94,251);
+    /* background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,0) 100%); */
 }
 
  ul li {
-    list-style: none;
-    position: absolute;
-    /* animation: firework 2s cubic-bezier(0.73,-0.1,0.24,1.22);
-    background-color: red;
-    opacity: 0;
-    top: 95%;
-    left: 50%;
-    width: 2px;
-    height: 30px; */
-} 
-
-ul:nth-of-type(1) li {
-    list-style: none;
+    list-style-type: none;
     position: absolute;
     width: 5px;
     height: 20px;
-    top: 15%;
-    left: 30%;
-    background-color: rgb(255, 0, 0);
-    /* background-image: radial-gradient(
-  rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 95%); */
-    --hoekVar:30deg;
- 	transform-origin:center top;
-    transform:rotate( calc( var(--hoekVar)  - var(--hoekVar) *14/7 * (var(--index) - 1)  ) ) scaley(.2);
+    transform-origin:center top;
     transition:2s;
+    transform: var(--rotate) scaley(1);
     animation: fireworkAnimation 1s cubic-bezier(0.73,-0.1,0.24,1.22);
     opacity: 0;
+} 
+
+label {
+    display: inline;
+    font-family: 'Quicksand', sans-serif;
+    background-color:  #ccc;
+    padding:10px;
+    cursor: pointer;
+}
+
+label:checked {
+    background-color:  rgb(90, 90, 90);
+    cursor: pointer;
+}
+
+input {
+     display: none;
+     margin-bottom: 100px;
+     cursor: pointer;
+}
+input[type="checkbox"]:checked ~ ul:nth-of-type(1) li {
+    top: 15%;
+    left: 30%;
+    background-color: rgb(255, 0, 0); 
     animation-delay: 2.5s;
 }
 
-ul:nth-of-type(2) li {
-    list-style: none;
-    position: absolute;
-    width: 5px;
-    height: 20px;
+input[type="checkbox"]:checked ~ ul:nth-of-type(2) li {
     top: 50%;
     left: 70%;
     background-color: rgb(255, 238, 0);
-    --hoekVar:30deg;
- 	transform-origin:center top;
-    transform:rotate( calc( var(--hoekVar) - var(--hoekVar) *14/7 * (var(--index) - 1)  ) );
-    transition:2s;
-    animation: fireworkAnimation 1s cubic-bezier(0.73,-0.1,0.24,1.22);
-    opacity: 0;
     animation-delay: 3s;
 }
 
-ul:nth-of-type(3) li {
-    list-style: none;
-    position: absolute;
-    width: 5px;
-    height: 20px;
+input[type="checkbox"]:checked ~ ul:nth-of-type(3) li {
     top: 70%;
     left: 50%;
     background-color: rgb(255, 0, 212);
-    --hoekVar:30deg;
- 	transform-origin:center top;
-    transform:rotate( calc( var(--hoekVar) - var(--hoekVar) * 14/7 * (var(--index) - 1)  ) );
-    transition:2s;
-    animation: fireworkAnimation 1s cubic-bezier(0.73,-0.1,0.24,1.22);
-    opacity: 0;
     animation-delay: 3.5s;
 }
 
-/* transform:rotate( calc( var(--hoekVar) * 7/7 * (var(--index))  ) ); */
+input[type="checkbox"]:checked ~ ul:nth-of-type(4) li {
+    top: 30%;
+    left: 10%;
+    background-color: rgb(0, 119, 255);
+    animation-delay: 4s;
+}
 
+input[type="checkbox"]:checked ~ ul:nth-of-type(5) li {
+    top: 90%;
+    left: 60%;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgb(0, 255, 13);
+    animation-delay: 4.5s;
+}
+
+input#groen-vuurwerk:checked ~ ul li {
+    background-color: rgb(0, 255, 234); 
+}
+
+input#paars-vuurwerk:checked ~ ul li {
+    background-color: rgb(195, 0, 255); 
+}
+
+input#oranje-vuurwerk:checked ~ ul li {
+    background-color: rgb(255, 153, 0); 
+}
+
+/* input#groen-vuurwerk:checked ~ ul li {
+    background-color: rgb(0, 255, 234); 
+} */
 
 @keyframes firework {
 
     0% {
         top: 95%;
         left: 50%;
-        opacity: 1;  
-
     }
 
     90% {
         left: 50%;
-        opacity: 1;  
-
     }
 
     100% {
         top: 10%;
         left: 50%;
-        opacity: 1;  
     }
     
 }
 
 @keyframes fireworkAnimation {
     0% {
-        /* top: 15%;
-        left: 50%; */
-        opacity: 1;
+         opacity: 1;
     }
 
     100% {
-
-        /* top: 20%;
-        left: 50%; */
         opacity: 1;
-        transform:rotate( calc( var(--hoekVar)  - var(--hoekVar) * 14/7 * (var(--index) - 1)  ) ) scaley(1) translatey(6em);
+        transform: var(--rotate) scaleY(5) translateY(150%) rotate(3600deg);
         opacity:0;
-    
-
     }
 }
-
 
