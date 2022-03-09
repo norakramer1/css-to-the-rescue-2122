@@ -3,7 +3,12 @@
  
 
 html {
-    background-color: rgb(22, 23, 27);
+    background: rgb(2,0,36);
+background: linear-gradient(0deg, rgba(2,0,36,1) 21%, rgba(49,0,135,1) 24%,  rgba(9,15,47,1) 43%,  rgba(9,15,47,1) 78%);
+}
+
+body {
+    margin: 0;
 }
 
 li:nth-of-type(1) { --index:1; }
@@ -18,56 +23,83 @@ li:nth-of-type(8) { --index:8; }
  * {
     --hoekVar: calc(360deg / 8);
     --rotate: rotate(calc( var(--hoekVar) * var(--index) ));
+    --red: rgb(255, 0, 0);
+    --yellow: rgb(255, 238, 0); 
+    --pink: rgb(255, 0, 212);
+    --blauw: rgb(0, 119, 255);
+    --green: rgb(0, 255, 13);
+    --turquoise: rgb(0, 255, 234);
+    --purple: rgb(195, 0, 255);
+    --orange: rgb(255, 153, 0);
+
 }
 
+/* make main full height */
 main {
     height: 100vh;
-    width: 100vw;
 }
 
-main:checked {
-    transition: background-color 2s ease-in;
 
-}
-
-section:first-of-type {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-
-ul {
+/* positioning uls relative */
+main > ul {
     position: relative;
-    width: 1rem;
-    height: 1rem;
-    /* background-color: rgb(63,94,251); */
+
+/* give ul width and height*/
+    width: 10px;
+    height: 10px;
+    background-color: var(--pink);
+
   
 }
 
-:checked ~ main {
+ input[type="checkbox"]:first-of-type:checked ~ main {
     animation: colorChange 2s ease;
     animation-delay: 2.5s;
  }
 
- ul li {
-    list-style-type: none;
+input[type="checkbox"]:checked ~ main ul li {
+ /* position lis in circle*/
     position: absolute;
-    width: 5px;
+    width: 2px;
     height: 20px;
     transform-origin: center top;
-    transition: 2s;
-    transform: var(--rotate) scaley(1);
-    animation: fireworkAnimation 1s cubic-bezier(0.73,-0.1,0.24,1.22);
+    transform: var(--rotate) scaley(0);
+    animation: colorChange 2s ease;
+    animation: fireworkAnimation 1s cubic-bezier(0.73,0.1,0.24,1.22);
     opacity: 0;
 } 
 
+input[type="checkbox"]:checked ~ main ul li > ul li {
+    /* position lis in circle*/
+       position: absolute;
+       width: 2px;
+       height: 10px;
+       transform-origin: center top;
+       transform: var(--rotate) scaley(0);
+       animation: fireworkAnimation 1s cubic-bezier(0.73,0.1,0.24,1.22);
+       animation-delay: 2s;
+       opacity: 0; 
+   } 
+
+/* position labels */
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
+
+/* button styling*/
 label {
-    font-family: 'Quicksand', sans-serif;
-    background-color:  #ccc;
-    padding: 10px 10px 10px 10px;
-    margin: 10px;
-    cursor: pointer;
+ margin-right: 5%;
+ font-family: 'Quicksand', sans-serif;
+ background-color:  #ccc;
+ padding: 10px;
+ cursor: pointer;
+}
+
+label:hover {
+    background-color: rgb(90, 90, 90);
 }
 
 label:checked {
@@ -75,114 +107,353 @@ label:checked {
     cursor: pointer;
 }
 
-
-input {
-     display: none;
-     cursor: pointer;
+/* remove list style*/
+ul li {
+    list-style-type: none;  
 }
 
-input[type="checkbox"]:checked ~ section ul:nth-of-type(1) {
+input {
+     /* display: none; */
+    left: -1000em;
+    position: absolute;
+}
+
+
+/*position ul on page*/
+ input[type="checkbox"]:checked ~ main section ~ ul:first-of-type {
+    
     top: 15%;
     left: 30%;
 }
 
-input[type="checkbox"]:checked ~ section ul:nth-of-type(2) {
+input[type="checkbox"]:checked ~ main section ~ ul:nth-of-type(2) {
      top: 50%;
     left: 70%;
 }
 
-input[type="checkbox"]:checked ~ section ul:nth-of-type(3) {
-    top: 70%;
+input[type="checkbox"]:checked ~ main section ~ ul:nth-of-type(3) {
+    top: 5%;
     left: 40%;
 }
 
-input[type="checkbox"]:checked ~ section ul:nth-of-type(4) {
+input[type="checkbox"]:checked ~ main section ~ ul:nth-of-type(4) {
+    top: 30%;
+    left: 80%;
+}
+
+input[type="checkbox"]:checked ~ main section ~ ul:nth-of-type(5) {
+    top: 40%;
+    left: 40%;
+}
+
+input[type="checkbox"]:checked ~ main section ~ ul:nth-of-type(6) {
+    top: 34%;
+    left: 70%;
+}
+
+input[type="checkbox"]:checked ~ main section ~ ul:nth-of-type(7) {
+    top: 10%;
+    left: 70%;
+}
+
+input[type="checkbox"]:checked ~ main section ~ ul:nth-of-type(8) {
+    top: 22%;
+    left: 30%;
+}
+
+/* body:checked main {
      top: 30%;
     left: 10%;
-}
+} */
 
-input[type="checkbox"]:checked ~ section ul:nth-of-type(1) li {
-    background-color: rgb(255, 0, 0); 
+/* give colors and animation delays to li's*/
+input[type="checkbox"]:checked ~ main ul:first-of-type li {
+    background-color: var(--red);
+    box-shadow: 0 0 0 0 var(--red);
     animation-delay: 2.5s;
+
 }
 
-
-input[type="checkbox"]:checked ~ section ul:nth-of-type(2) li {
-    background-color: rgb(255, 238, 0);
+input[type="checkbox"]:checked ~ main ul:nth-of-type(2) li {
+    background-color: var(--yellow);
     animation-delay: 3s;
 }
 
-input[type="checkbox"]:checked ~ section ul:nth-of-type(3) li {
-    background-color: rgb(255, 0, 212);
+input[type="checkbox"]:checked ~ main ul:nth-of-type(3) li {
+    background-color: var(--pink);
     animation-delay: 3.5s;
 }
 
-input[type="checkbox"]:checked ~ section ul:nth-of-type(4) li {
-    background-color: rgb(0, 119, 255);
+input[type="checkbox"]:checked ~ main ul:nth-of-type(4) li {
+    background-color: var(--blauw);
     animation-delay: 4s;
 }
 
-input[type="checkbox"]:checked ~ section ul:nth-of-type(5) li {
-    /* top: 90%;
-    left: 60%; */
-    background-color: rgb(0, 255, 13);
+ input[type="checkbox"]:checked ~ main > ul:nth-of-type(5) li {
+     top: 80%;
+    left: 60%; 
+    background-color: var(--green);
     animation-delay: 4.5s;
 }
 
-input#groen-vuurwerk:checked ~ section ul li {
-    background-color: rgb(0, 255, 234); 
+input[type="checkbox"]:checked ~ main > ul:nth-of-type(6) li {
+    top: 80%;
+   left: 60%; 
+   background-color: var(--pink);
+   animation-delay: 5s;
 }
 
-input#paars-vuurwerk:checked ~ section ul li {
-    background-color: rgb(195, 0, 255); 
+input[type="checkbox"]:checked ~ main > ul:nth-of-type(7) li {
+    top: 80%;
+   left: 60%; 
+   background-color: var(--purple);
+   animation-delay: 5.5s;
 }
 
-input#oranje-vuurwerk:checked ~ section  ul li {
-    background-color: rgb(255, 153, 0); 
+input[type="checkbox"]:checked ~ main > ul:nth-of-type(8) li {
+    top: 80%;
+   left: 60%; 
+   background-color: var(--green);
+   animation-delay: 6s;
 }
 
-@keyframes firework {
+/*  */
 
-    0% {
-        top: 95%;
-        left: 50%;
-    }
-
-    90% {
-        left: 50%;
-    }
-
-    100% {
-        top: 10%;
-        left: 50%;
-    }
-    
+/* color change with checkboxes */
+input[type="checkbox"]:checked ~ main > ul li  {
+    background-color: var(--turquoise); 
 }
+
+input[type="checkbox"]:checked ~ main > ul li {
+    background-color: var(--purple); 
+}
+
+input[type="checkbox"]:checked ~ main > ul li {
+    background-color: var(--orange); 
+}
+
+section:nth-of-type(2) ul {
+    height: 80px;
+    width: 42px;
+   border-radius: 50% 50% 50% 50%;
+background-color: antiquewhite;
+animation: moon 2s infinite alternate;
+/* box-shadow:  0px 0px 9px 1px rgba(250,235,215,0.52); */
+box-shadow: 0px 220px 45px -20px rgba(91, 91, 236, 0.82);
+margin: -10%;
+
+   
+}
+
+div {
+    position: absolute;
+    height: 3px;
+    width: 3px;
+    border-radius: 50% 50% 50% 50%;
+    background-color: rgb(236, 244, 255);
+    box-shadow:  0px 0px 5px 1px rgb(236, 244, 255, 0.52);
+
+
+}
+
+/* stars */
+div:first-of-type {
+    top: 40%;
+    left: 40%;
+}
+
+div:nth-of-type(2) {
+    top: 30%;
+    left: 10%;
+}
+
+div:nth-of-type(3) {
+    top: 60%;
+    left: 80%;
+}
+
+div:nth-of-type(4) {
+    top: 25%;
+    left: 65%;
+}
+
+div:nth-of-type(5) {
+    top: 5%;
+    left: 85%;
+
+}
+
+div:nth-of-type(6) {
+    top: 65%;
+    left: 85%;
+
+}
+
+div:nth-of-type(7) {
+    top: 37%;
+    left: 45%;
+
+}
+
+div:nth-of-type(8) {
+    top: 40%;
+    left: 47%;
+
+}
+
+div:nth-of-type(9) {
+    top: 12%;
+    left: 90%;
+
+}
+
+div:nth-of-type(10) {
+    top: 50%;
+    left: 24%;
+
+}
+
+div:nth-of-type(11) {
+    top: 67%;
+    left: 28%;
+
+}
+
+
+div:nth-of-type(12) {
+    top: 15%;
+    left: 20%;
+
+}
+
+div:nth-of-type(13) {
+    top: 70%;
+    left: 10%;
+
+}
+
+div:nth-of-type(14) {
+    top: 70%;
+    left: 10%;
+
+}
+
+div:nth-of-type(15) {
+    top: 70%;
+    left: 10%;
+
+}
+
+div:nth-of-type(16) {
+    top: 70%;
+    left: 10%;
+
+}
+
+div:nth-of-type(15) {
+    animation: stars 0.5s;
+    animation-delay: 6s;
+   
+}
+
+
+div:nth-of-type(3n) {
+    animation: stars 0.5s;
+    animation-delay: 5s;
+    transform-origin: center center;
+ 
+}
+
+div:nth-of-type(5n+1) {
+    animation: stars 0.5s;
+    animation-delay: 10s;
+    transform-origin: center center;
+ 
+}
+
+div:nth-of-type(-n+4) {
+    animation: stars 0.5s;
+    animation-delay: 10s;
+    transform-origin: center center;  
+}
+
+/* section:nth-of-type(2) ul li {
+    height: 80px;
+    width: 12px;
+    background-color: aliceblue;
+} */
+
+
 
 @keyframes fireworkAnimation {
     0% {
-         opacity: 1;
+         opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
     }
 
     100% {
-        opacity: 1;
-        transform: var(--rotate) scaleY(5) rotate(360deg) translateY(150%);
+        box-shadow: 0 0 2em 1em rgba(255, 0, 0, 0.8);
+        transform: var(--rotate) scaleY(2) rotate(360deg) translateY(150%);
         opacity:0;
     }
 }
 
-/* rotate(3600deg) */
-
-@keyframes colorChange {
+@keyframes fireworkAnimationSmall {
     0% {
-        background-color: rgba(9,15,47,1)
+         opacity: 0;
     }
+
     50% {
-        background: rgb(63,94,251);
        
+        opacity: 1;
     }
 
     100% {
-        background-color: rgba(9,15,47,1)
+        transform: var(--rotate) scaleY(2) rotate(360deg) translateY(150%);
+        opacity:0;
     }
+}
+
+
+
+@keyframes moon {
+
+    0% {
+        margin-top: 0;
+    }
+
+    100% {
+        margin-top: 0.5%;
+    }
+    
+}
+
+@keyframes stars {
+
+    0% {
+        height: 3px;
+    width: 3px;
+    }
+
+    90% {
+        height: 6px;
+        width: 6px;
+    }
+
+    100% {
+        height: 3px;
+        width: 3px;
+    }
+    
+}
+
+@media (prefers-color-scheme: dark) {
+
+    body {
+        background-color:rgb(0, 255, 13);
+    }
+
 }
