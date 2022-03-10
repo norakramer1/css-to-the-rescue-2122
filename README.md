@@ -37,11 +37,25 @@ Ik ga me in deze fase niet focussen op de bergen. Als ik er tijd voor heb wil ik
 Ik wil kijken hoe ik het vuurwerk interactief kan maken. Ik wil er voor zorgen dat de gebruiker de kleur van het vuurwerk kan kiezen.
 
 ## Week 3
-Laat je voortgang zien ('praatje met plaatjes').
-Wat ging er soepel en wat was lastig.
-Welke experimenten heb je gedaan die die 'mislukt' zijn.
-Heb je nieuwe inzichten hoe je de kracht CSS kunt benutten (of juist niet).
-Neem wijzigingen aan je 1e plan op.
-Waar liggen je (nieuwe) uitdagingen voor komende week.
+- Laat je voortgang zien ('praatje met plaatjes').
+Deze week heb ik interactie in het vuurwerk gekregen doormiddel van checkboxes. Ik heb hier labels aan toegevoegd en deze gestyled als buttons. Ook heb ik het vuurwerk beter werkend gekregen, het verschijnt, wordt groter terwijl het draait en fade dan weg. 
+
+![Week 3](https://github.com/norakramer1/firework-show/blob/main/img/week-3.png raw=true)
+![Week 3](https://github.com/norakramer1/firework-show/blob/main/img/week-3-2.png raw=true)
+
+- Wat ging er soepel en wat was lastig.
+Wat ik moeilijk vond is het aanpassen van de berekening. Ik heb deze in de vorige week overgenomen uit een codepen, maar ik snapte er niks van, ook was het niet wat ik zocht. Ik heb de berekening uiteindelijk versimpelt door alle `li's` een custom propery met een index te geven en dan `360deg / 8` 8 is hier het aantal li's. Dit berekend de hoek van elke `li`. Daarna kun je dit custom property weer gebruiken om dat `*` de index te delen. 
+
+- Welke experimenten heb je gedaan die die 'mislukt' zijn.
+Ik ben veel aan de slag geweest met andere soorten vuurwerk. Ik ben begonnen met het de `li's ` bolletjes te maken om zo hopelijk een soort draaiend vuurwerk te krijgen maar dit is allemaal mislukt, ik heb hier besloten verder te gaan met het het langwerpige vuurwerk in verband met de tijd.
+
+- Heb je nieuwe inzichten hoe je de kracht CSS kunt benutten (of juist niet).
+Ik ben meer te weten gekomen over `calc()` en hoe je dit kan gebruiken samen met variabelen. Ook kun je hierdoor rekensommen maken om iets uit te rekenen.
+
+- Neem wijzigingen aan je 1e plan op.
+Ik wil me vanaf hier focussen op één soort vuurwerk. Ik had graag meer gewild maar ik heb er de tijd niet meer voor. Ik vind dit erg jammer want het had veel variëteit toegevoegd aan dit project.
+
+- Waar liggen je (nieuwe) uitdagingen voor komende week.
+Uitdagingen liggen bij het stylen van de pagina. Dit is op het moment erg saai
 
 ## Week 4
