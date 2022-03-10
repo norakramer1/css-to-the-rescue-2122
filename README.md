@@ -40,8 +40,8 @@ Ik wil kijken hoe ik het vuurwerk interactief kan maken. Ik wil er voor zorgen d
 - Laat je voortgang zien ('praatje met plaatjes').
 Deze week heb ik interactie in het vuurwerk gekregen doormiddel van checkboxes. Ik heb hier labels aan toegevoegd en deze gestyled als buttons. Ook heb ik het vuurwerk beter werkend gekregen, het verschijnt, wordt groter terwijl het draait en fade dan weg. 
 
-![Week 3](https://github.com/norakramer1/firework-show/blob/main/img/week-3.png raw=true)
-![Week 3](https://github.com/norakramer1/firework-show/blob/main/img/week-3-2.png raw=true)
+![Week 3](https://github.com/norakramer1/firework-show/blob/main/img/week-3.png?raw=true)
+![Week 3](https://github.com/norakramer1/firework-show/blob/main/img/week-3-2.png?raw=true)
 
 - Wat ging er soepel en wat was lastig.
 Wat ik moeilijk vond is het aanpassen van de berekening. Ik heb deze in de vorige week overgenomen uit een codepen, maar ik snapte er niks van, ook was het niet wat ik zocht. Ik heb de berekening uiteindelijk versimpelt door alle `li's` een custom propery met een index te geven en dan `360deg / 8` 8 is hier het aantal li's. Dit berekend de hoek van elke `li`. Daarna kun je dit custom property weer gebruiken om dat `*` de index te delen. 
@@ -56,6 +56,11 @@ Ik ben meer te weten gekomen over `calc()` en hoe je dit kan gebruiken samen met
 Ik wil me vanaf hier focussen op één soort vuurwerk. Ik had graag meer gewild maar ik heb er de tijd niet meer voor. Ik vind dit erg jammer want het had veel variëteit toegevoegd aan dit project.
 
 - Waar liggen je (nieuwe) uitdagingen voor komende week.
-Uitdagingen liggen bij het stylen van de pagina. Dit is op het moment erg saai
+Uitdagingen liggen bij het stylen van de pagina. Dit is op het moment erg saai. Ook moet ik mijn code opschonen en zitten er nog veel fouten in de animaties. Ze gaan af zonder dat de bozes gecheckt zijn op random momenten. Wat ik als laatste nog zou willen doen is een achtergrond schaduw toevoegen op de `li's` zodat de elementen echt licht lijken te geven.
 
 ## Week 4
+Bespreek je eindresultaat. ('praatje met plaatjes').
+Wat ging er soepel , wat was lastig en waar ben je trots op.
+Welke experimenten heb je gedaan die die 'mislukt' zijn.
+Heb je nieuwe inzichten hoe je de kracht CSS kunt benutten (of juist niet).
+Waar wil je meer mee gaan doen.
