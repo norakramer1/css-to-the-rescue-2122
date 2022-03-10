@@ -1,5 +1,9 @@
 # Forked repo CSS to the Rescue @cmda-minor-web 2021 - 2022
 
+In deze repo vind je een pure css vuurwerk show(tje). Het doen van de opdracht was om een interactieve vuurwerkshow te maken met alleen HTMl en CSS. Je kunt geen Id's en Classes gebruiken (alleen als het echt niet anders kan). Je moet gebruik maken van de CCS selectoren.
+
+![Week 4](https://github.com/norakramer1/firework-show/blob/main/img/week-4.png?raw=true)
+
 ## Week 1
 De opdracht die ik gekozen heb om uit te werken is de vuurwerkshow. Ik wil 2 of 3 verschillende soorten vuurwerk laten zien met een `ul` waar de `li` van bewegen naar buiten en naar beneden vallen. Als interactie wil ik de kleur van de vuurwerkshow veranderen.
 
@@ -79,5 +83,13 @@ Ik ben uiteindelijk toch wel blij dat er in ieder geval *iets* gelukt is. Ik vin
 5. De hele `main` van kleur veranderen als elk vuurwerkje afgaat
 
 - Heb je nieuwe inzichten hoe je de kracht CSS kunt benutten (of juist niet).
+Ik heb veel geleerd over wat er allemaal mogelijk is op het gebied van CSS. Ik dacht aan het begin dat ik wel oke was met CSS maar ik kwam er snel achter dat er nog veel te leren valt. Ik heb geleerd beter na te denken over selectoren voordat je begint met id's en classes. Ook weet ik meer over het gebruik van variabelen en in welke gevallen ze echt handig zijn. Ik ben er achter gekomen dat je een deel van de interactie ook zou kunnen doen met checkboxes en radiobuttons. 
+
 
 - Waar wil je meer mee gaan doen.
+
+- `calc()`
+- `css variabelen`
+- Gradients animeren met houdini en `@property`, en dit ook op andere manieren gaan gebruiken
+- Meer gebruik maken van `nth-of-type`, vooral door bijvoorbeeld elke 3e in een `ul` te pakken
+- Dingen animeren, laten zien/ verdwijnen met checboxes en labels ipv. altijd Javascript te gebruiken voor interactie
