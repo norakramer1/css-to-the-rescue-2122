@@ -56,11 +56,28 @@ Ik ben meer te weten gekomen over `calc()` en hoe je dit kan gebruiken samen met
 Ik wil me vanaf hier focussen op één soort vuurwerk. Ik had graag meer gewild maar ik heb er de tijd niet meer voor. Ik vind dit erg jammer want het had veel variëteit toegevoegd aan dit project.
 
 - Waar liggen je (nieuwe) uitdagingen voor komende week.
-Uitdagingen liggen bij het stylen van de pagina. Dit is op het moment erg saai. Ook moet ik mijn code opschonen en zitten er nog veel fouten in de animaties. Ze gaan af zonder dat de bozes gecheckt zijn op random momenten. Wat ik als laatste nog zou willen doen is een achtergrond schaduw toevoegen op de `li's` zodat de elementen echt licht lijken te geven.
+Uitdagingen liggen bij het stylen van de pagina. Dit is op het moment erg saai. Ook moet ik mijn code opschonen en zitten er nog veel fouten in de animaties. Ze gaan af zonder dat de boxes gecheckt zijn op random momenten. Wat ik als laatste nog zou willen doen is een achtergrond schaduw toevoegen op de `li's` zodat de elementen echt licht lijken te geven.
 
 ## Week 4
-Bespreek je eindresultaat. ('praatje met plaatjes').
-Wat ging er soepel , wat was lastig en waar ben je trots op.
-Welke experimenten heb je gedaan die die 'mislukt' zijn.
-Heb je nieuwe inzichten hoe je de kracht CSS kunt benutten (of juist niet).
-Waar wil je meer mee gaan doen.
+- Bespreek je eindresultaat. ('praatje met plaatjes').
+Dit is het eindresultaat. Je ziet een gradient achtergrond met een maan die een klein beetje beweegt. Het vuurwerk kun je aansturen met de knoppen 'Start vuurwerk' lanceert het vuurwerk in regenboog kleuren. De andere knoppen veranderen het vuurwerk van kleur. Ook hebben de `li's` een box shadow om ze een beetje op te laten lichten. Op de achtergrond zie je ook nog een aantal sterren. Deze fonkelen door ze te vergroten. Ik wilde hierbij experimenteren door bijvoorbeeld`nth-of-type(3n)` te gebruiken, ik had `nth-of-type()` nog neit gebruikt om bijvoorbeeld alle 3e elementen aan te spreken en een soort mini berekeningen te maken. Dit wilde ik wel graag nog leren, alle sterren zijn divjes die ik op random plekken gepositioneert heb met `position: absolute` en `top: en left:`.
+
+![Week 4](https://github.com/norakramer1/firework-show/blob/main/img/week-4.png?raw=true)
+![Week 4](https://github.com/norakramer1/firework-show/blob/main/img/week-4-1.png?raw=true)
+![Week 4](https://github.com/norakramer1/firework-show/blob/main/img/week-4-2.png?raw=true)
+
+- Wat ging er soepel , wat was lastig en waar ben je trots op.
+Wat uiteindelijk soepel ging was het stylen van de achtergrond. Ik ben hier zonder grote problemen doorheen gekomen. 
+Wat ik lastig vond was een hele hoop. Ik vind het positioneren en animeren van het vuurwerk een stuk lastiger en frustrender dan verwacht. Ik heb hier 80% van de tijd aan besteed. Waar ik ook lang mee bezig ben geweest is het zorgen dat met de knoppen de vuurwerk kleur veranderd, dit had te maken met de specifiteit van de selectoren in het regenboog vuurwerk. Ik vind het jammer dat daardoor veel andere dingen niet lukte, ik denk namelijk dat ik nog veel had kunnen toevoegen en meer had kunnen leren.
+Ik ben uiteindelijk toch wel blij dat er in ieder geval *iets* gelukt is. Ik vind het geheel er wel mooi uitzien, maar ik vind het eindproduct eigenlijk te simpel en te klein.
+
+- Welke experimenten heb je gedaan die die 'mislukt' zijn.
+1. Vuurwerk maken met `::before` en  `::after`
+2. Meerdere soorten vuurwerk maken
+3. Werken met `svg` paths en `clip paths` voor de bergen (door de tijd)
+4. Ik wilde in het begin ook iets doen met een textuur, zodat het meer zou lijken op een tekening
+5. De hele `main` van kleur veranderen als elk vuurwerkje afgaat
+
+- Heb je nieuwe inzichten hoe je de kracht CSS kunt benutten (of juist niet).
+
+- Waar wil je meer mee gaan doen.
