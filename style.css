@@ -251,7 +251,7 @@ input:nth-child(2)[type="checkbox"]:checked~main ul li {
     --pink: aqua;
     --blauw: aqua;
     --green: aqua;
-    --green: aqua;
+    --purple: aqua;
 }
 
 input:nth-child(3)[type="checkbox"]:checked~main ul li {
@@ -270,6 +270,7 @@ input:nth-child(4)[type="checkbox"]:checked~main ul li {
     --pink: orange;
     --blauw: orange;
     --green: orange;
+    --purple: orange;
 
 }
 
