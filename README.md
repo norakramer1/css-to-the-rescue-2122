@@ -2,7 +2,7 @@
 
 In deze repo vind je een pure css vuurwerk show(tje). Het doen van de opdracht was om een interactieve vuurwerkshow te maken met alleen HTMl en CSS. Je kunt geen Id's en Classes gebruiken (alleen als het echt niet anders kan). Je moet gebruik maken van de CCS selectoren.
 
-![Week 4](https://github.com/norakramer1/firework-show/blob/main/img/week-4.png?raw=true)
+![Eindresultaat](https://github.com/norakramer1/firework-show/blob/main/img/week-4.png?raw=true)
 
 ## Week 1
 De opdracht die ik gekozen heb om uit te werken is de vuurwerkshow. Ik wil 2 of 3 verschillende soorten vuurwerk laten zien met een `ul` waar de `li` van bewegen naar buiten en naar beneden vallen. Als interactie wil ik de kleur van de vuurwerkshow veranderen.
