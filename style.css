@@ -1,30 +1,53 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
- 
+
 
 html {
-    background: rgb(2,0,36);
-background: linear-gradient(0deg, rgba(2,0,36,1) 21%, rgba(49,0,135,1) 24%,  rgba(9,15,47,1) 43%,  rgba(9,15,47,1) 78%);
+    background: rgb(2, 0, 36);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 21%, rgba(49, 0, 135, 1) 24%, rgba(9, 15, 47, 1) 43%, rgba(9, 15, 47, 1) 78%);
 }
 
 body {
     margin: 0;
 }
 
-li:nth-of-type(1) { --index:1; }
-li:nth-of-type(2) { --index:2; }
-li:nth-of-type(3) { --index:3; }
-li:nth-of-type(4) { --index:4; }
-li:nth-of-type(5) { --index:5; }
-li:nth-of-type(6) { --index:6; }
-li:nth-of-type(7) { --index:7; }
-li:nth-of-type(8) { --index:8; }
+li:nth-of-type(1) {
+    --index: 1;
+}
 
- * {
+li:nth-of-type(2) {
+    --index: 2;
+}
+
+li:nth-of-type(3) {
+    --index: 3;
+}
+
+li:nth-of-type(4) {
+    --index: 4;
+}
+
+li:nth-of-type(5) {
+    --index: 5;
+}
+
+li:nth-of-type(6) {
+    --index: 6;
+}
+
+li:nth-of-type(7) {
+    --index: 7;
+}
+
+li:nth-of-type(8) {
+    --index: 8;
+}
+
+* {
     --hoekVar: calc(360deg / 8);
-    --rotate: rotate(calc( var(--hoekVar) * var(--index) ));
+    --rotate: rotate(calc(var(--hoekVar) * var(--index)));
+    --rainbow: calc(var(--rainbow) + 100% / 7);
     --red: rgb(255, 0, 0);
-    --yellow: rgb(255, 238, 0); 
+    --yellow: rgb(255, 238, 0);
     --pink: rgb(255, 0, 212);
     --blauw: rgb(0, 119, 255);
     --green: rgb(0, 255, 13);
@@ -41,45 +64,37 @@ main {
 
 
 /* positioning uls relative */
-main > ul {
+main>ul {
     position: relative;
 
-/* give ul width and height*/
+    /* give ul width and height*/
     width: 10px;
     height: 10px;
-    /* background-color: var(--pink); */
-
-  
 }
 
- input[type="checkbox"]:first-of-type:checked ~ main {
-    animation: colorChange 2s ease;
-    animation-delay: 2.5s;
- }
+/* position lis in circle*/
+input[type="checkbox"]:checked~main ul li {
 
-input[type="checkbox"]:checked ~ main ul li {
- /* position lis in circle*/
     position: absolute;
     width: 2px;
     height: 20px;
     transform-origin: center top;
     transform: var(--rotate) scaley(0);
-    animation: colorChange 2s ease;
-    animation: fireworkAnimation 1s cubic-bezier(0.73,0.1,0.24,1.22);
+    animation: fireworkAnimation 1s cubic-bezier(0.73, 0.1, 0.24, 1.22);
     opacity: 0;
-} 
+}
 
-input[type="checkbox"]:checked ~ main ul li > ul li {
-    /* position lis in circle*/
+/* position lis in circle*/
+/* input[type="checkbox"]:checked ~ main ul li > ul li {
        position: absolute;
        width: 2px;
        height: 10px;
        transform-origin: center top;
-       transform: var(--rotate) scaley(0);
+       transform: var(--rotate) scaley(1);
        animation: fireworkAnimation 1s cubic-bezier(0.73,0.1,0.24,1.22);
        animation-delay: 2s;
        opacity: 0; 
-   } 
+   }  */
 
 /* position labels */
 section {
@@ -91,172 +106,211 @@ section {
 
 /* button styling*/
 label {
- margin-right: 5%;
- font-family: 'Quicksand', sans-serif;
- background-color:  #ccc;
- padding: 10px;
- cursor: pointer;
-}
-
-label:hover {
-    background-color: rgb(90, 90, 90);
-}
-
-label:checked {
-    background-color: rgb(90, 90, 90);
+    margin-right: 5%;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #ccc;
+    padding: 10px;
     cursor: pointer;
+    margin-top: 1.5%;
 }
+
+/* box shadow on water */
+label:hover {
+    box-shadow: 0px 500px 100px 9px #ffffff4f;
+}
+
+/* rainbow button animation and styling */
+label:nth-of-type(1):hover {
+    background: linear-gradient(90deg,
+            var(--red) calc(100% / 7),
+            var(--orange) calc(100% / 7 * 2),
+            var(--yellow) calc(100% / 7 * 3),
+            var(--green) calc(100% / 7 * 4),
+            var(--blauw) calc(100% / 7 * 5),
+            var(--purple) calc(100% / 7 * 6),
+            var(--red) calc(100% / 7 * 7));
+    background-position: 0%;
+    background-size: 200%;
+    animation: buttonAnimation 4s linear infinite;
+}
+
+/* color change other buttons */
+
+label:nth-of-type(2):hover {
+    background-color: var(--turquoise);
+}
+
+label:nth-of-type(3):hover {
+    background-color: var(--purple);
+}
+
+label:nth-of-type(4):hover {
+    background-color: var(--orange);
+
+}
+
 
 /* remove list style*/
 ul li {
-    list-style-type: none;  
+    list-style-type: none;
 }
 
+/* get inputs out of view */
 input {
-     /* display: none; */
     left: -1000em;
     position: absolute;
 }
 
 
 /*position ul on page*/
- input[type="checkbox"]:checked ~ main section ~ ul:first-of-type {
-    
+input[type="checkbox"]:checked~main section~ul:first-of-type {
+
     top: 15%;
     left: 30%;
 }
 
-input[type="checkbox"]:checked ~ main section ~ ul:nth-of-type(2) {
-     top: 50%;
+input[type="checkbox"]:checked~main section~ul:nth-of-type(2) {
+    top: 50%;
     left: 70%;
 }
 
-input[type="checkbox"]:checked ~ main section ~ ul:nth-of-type(3) {
+input[type="checkbox"]:checked~main section~ul:nth-of-type(3) {
     top: 5%;
     left: 40%;
 }
 
-input[type="checkbox"]:checked ~ main section ~ ul:nth-of-type(4) {
+input[type="checkbox"]:checked~main section~ul:nth-of-type(4) {
     top: 30%;
     left: 80%;
 }
 
-input[type="checkbox"]:checked ~ main section ~ ul:nth-of-type(5) {
+input[type="checkbox"]:checked~main section~ul:nth-of-type(5) {
     top: 40%;
     left: 40%;
 }
 
-input[type="checkbox"]:checked ~ main section ~ ul:nth-of-type(6) {
+input[type="checkbox"]:checked~main section~ul:nth-of-type(6) {
     top: 34%;
     left: 70%;
 }
 
-input[type="checkbox"]:checked ~ main section ~ ul:nth-of-type(7) {
+input[type="checkbox"]:checked~main section~ul:nth-of-type(7) {
     top: 10%;
     left: 70%;
 }
 
-input[type="checkbox"]:checked ~ main section ~ ul:nth-of-type(8) {
+input[type="checkbox"]:checked~main section~ul:nth-of-type(8) {
     top: 22%;
     left: 30%;
 }
 
-/* body:checked main {
-     top: 30%;
-    left: 10%;
-} */
-
 /* give colors and animation delays to li's*/
-input[type="checkbox"]:checked ~ main ul:first-of-type li {
+input[type="checkbox"]:checked~main ul:first-of-type li {
     background-color: var(--red);
     box-shadow: 0 0 0 0 var(--red);
     animation-delay: 2.5s;
 
 }
 
-input[type="checkbox"]:checked ~ main ul:nth-of-type(2) li {
+input[type="checkbox"]:checked~main ul:nth-of-type(2) li {
     background-color: var(--yellow);
     animation-delay: 3s;
 }
 
-input[type="checkbox"]:checked ~ main ul:nth-of-type(3) li {
+input[type="checkbox"]:checked~main ul:nth-of-type(3) li {
     background-color: var(--pink);
     animation-delay: 3.5s;
 }
 
-input[type="checkbox"]:checked ~ main ul:nth-of-type(4) li {
+input[type="checkbox"]:checked~main ul:nth-of-type(4) li {
     background-color: var(--blauw);
     animation-delay: 4s;
 }
 
- input[type="checkbox"]:checked ~ main > ul:nth-of-type(5) li {
-     top: 80%;
-    left: 60%; 
+input[type="checkbox"]:checked~main>ul:nth-of-type(5) li {
+    top: 80%;
+    left: 60%;
     background-color: var(--green);
     animation-delay: 4.5s;
 }
 
-input[type="checkbox"]:checked ~ main > ul:nth-of-type(6) li {
+input[type="checkbox"]:checked~main>ul:nth-of-type(6) li {
     top: 80%;
-   left: 60%; 
-   background-color: var(--pink);
-   animation-delay: 5s;
+    left: 60%;
+    background-color: var(--pink);
+    animation-delay: 5s;
 }
 
-input[type="checkbox"]:checked ~ main > ul:nth-of-type(7) li {
+input[type="checkbox"]:checked~main>ul:nth-of-type(7) li {
     top: 80%;
-   left: 60%; 
-   background-color: var(--purple);
-   animation-delay: 5.5s;
+    left: 60%;
+    background-color: var(--purple);
+    animation-delay: 5.5s;
 }
 
-input[type="checkbox"]:checked ~ main > ul:nth-of-type(8) li {
+input[type="checkbox"]:checked~main>ul:nth-of-type(8) li {
     top: 80%;
-   left: 60%; 
-   background-color: var(--green);
-   animation-delay: 6s;
+    left: 60%;
+    background-color: var(--green);
+    animation-delay: 6s;
 }
-
-/*  */
 
 /* color change with checkboxes */
-input[type="checkbox"]:checked ~ main > ul li  {
-    background-color: var(--turquoise); 
+
+input:nth-child(2)[type="checkbox"]:checked~main ul li {
+    --red: aqua;
+    --yellow: aqua;
+    --pink: aqua;
+    --blauw: aqua;
+    --green: aqua;
+    --green: aqua;
 }
 
-input[type="checkbox"]:checked ~ main > ul li {
-    background-color: var(--purple); 
+input:nth-child(3)[type="checkbox"]:checked~main ul li {
+    --red: blueviolet;
+    --yellow: blueviolet;
+    --pink: blueviolet;
+    --blauw: blueviolet;
+    --green: blueviolet;
+
 }
 
-input[type="checkbox"]:checked ~ main > ul li {
-    background-color: var(--orange); 
+
+input:nth-child(4)[type="checkbox"]:checked~main ul li {
+    --red: orange;
+    --yellow: orange;
+    --pink: orange;
+    --blauw: orange;
+    --green: orange;
+
 }
 
+/* moon styling */
 section:nth-of-type(2) ul {
     height: 80px;
     width: 42px;
-   border-radius: 50% 50% 50% 50%;
-background-color: antiquewhite;
-animation: moon 2s infinite alternate;
-/* box-shadow:  0px 0px 9px 1px rgba(250,235,215,0.52); */
-box-shadow: 0px 220px 45px -20px rgba(91, 91, 236, 0.82);
-margin: -10%;
+    border-radius: 50% 50% 50% 50%;
+    background-color: rgba(255, 249, 218, 0.8);
+    animation: moon 2s infinite alternate;
+    box-shadow: 0px 220px 45px -20px rgba(91, 91, 236, 0.82);
+    margin: -10%;
 
-   
 }
 
+
+/* styling stars */
 div {
     position: absolute;
     height: 3px;
     width: 3px;
     border-radius: 50% 50% 50% 50%;
     background-color: rgb(236, 244, 255);
-    box-shadow:  0px 0px 5px 1px rgb(236, 244, 255, 0.52);
+    box-shadow: 0px 0px 5px 1px rgb(236, 244, 255, 0.52);
 
 
 }
 
-/* stars */
+/* stars positioning */
 div:first-of-type {
     top: 40%;
     left: 40%;
@@ -278,7 +332,7 @@ div:nth-of-type(4) {
 }
 
 div:nth-of-type(5) {
-    top: 5%;
+    top: 15%;
     left: 85%;
 
 }
@@ -353,41 +407,34 @@ div:nth-of-type(16) {
 div:nth-of-type(15) {
     animation: stars 0.5s;
     animation-delay: 6s;
-   
+
 }
 
-
+/* stars animation */
 div:nth-of-type(3n) {
     animation: stars 0.5s;
     animation-delay: 5s;
     transform-origin: center center;
- 
+
 }
 
 div:nth-of-type(5n+1) {
     animation: stars 0.5s;
     animation-delay: 10s;
     transform-origin: center center;
- 
+
 }
 
 div:nth-of-type(-n+4) {
     animation: stars 0.5s;
     animation-delay: 10s;
-    transform-origin: center center;  
+    transform-origin: center center;
 }
 
-/* section:nth-of-type(2) ul li {
-    height: 80px;
-    width: 12px;
-    background-color: aliceblue;
-} */
-
-
-
+/* firwork animation */
 @keyframes fireworkAnimation {
     0% {
-         opacity: 0;
+        opacity: 0;
     }
 
     50% {
@@ -395,30 +442,14 @@ div:nth-of-type(-n+4) {
     }
 
     100% {
-        box-shadow: 0 0 2em 1em rgba(255, 0, 0, 0.8);
+        box-shadow: 0 0 5em 1em rgba(255, 249, 218, 0.8);
         transform: var(--rotate) scaleY(2) rotate(360deg) translateY(150%);
-        opacity:0;
-    }
-}
-
-@keyframes fireworkAnimationSmall {
-    0% {
-         opacity: 0;
-    }
-
-    50% {
-       
-        opacity: 1;
-    }
-
-    100% {
-        transform: var(--rotate) scaleY(2) rotate(360deg) translateY(150%);
-        opacity:0;
+        opacity: 0;
     }
 }
 
 
-
+/* moon move animation */
 @keyframes moon {
 
     0% {
@@ -428,14 +459,15 @@ div:nth-of-type(-n+4) {
     100% {
         margin-top: 0.5%;
     }
-    
+
 }
 
+/* stars animation */
 @keyframes stars {
 
     0% {
         height: 3px;
-    width: 3px;
+        width: 3px;
     }
 
     90% {
@@ -447,13 +479,38 @@ div:nth-of-type(-n+4) {
         height: 3px;
         width: 3px;
     }
-    
+
 }
 
-@media (prefers-color-scheme: dark) {
+/* rainbow button animation*/
+@keyframes buttonAnimation {
 
-    body {
-        background-color:rgb(0, 255, 13);
+    0% {
+
+        background-position: 0%;
     }
 
+    100% {
+
+
+        background-position: 400%;
+    }
+
+}
+
+/* make firwork responsive */
+@media only screen and (max-width: 600px) {
+
+    input[type="checkbox"]:checked~main ul li>ul li {
+        width: 1px;
+        height: 3px;
+        transform: var(--rotate) scaleY(0.5) rotate(360deg) translateY(100%);
+
+    }
+
+    label {
+        padding: 5px;
+        margin-top: 10px;
+        font-size: 80%;
+    }
 }
