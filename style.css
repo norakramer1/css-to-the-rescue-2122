@@ -84,18 +84,6 @@ input[type="checkbox"]:checked~main ul li {
     opacity: 0;
 }
 
-/* position lis in circle*/
-/* input[type="checkbox"]:checked ~ main ul li > ul li {
-       position: absolute;
-       width: 2px;
-       height: 10px;
-       transform-origin: center top;
-       transform: var(--rotate) scaley(1);
-       animation: fireworkAnimation 1s cubic-bezier(0.73,0.1,0.24,1.22);
-       animation-delay: 2s;
-       opacity: 0; 
-   }  */
-
 /* position labels */
 section {
     display: flex;
