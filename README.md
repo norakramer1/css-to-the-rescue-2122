@@ -1,12 +1,19 @@
 # Forked repo CSS to the Rescue @cmda-minor-web 2021 - 2022
 
-In deze repo vind je een pure css vuurwerk show(tje). Het doen van de opdracht was om een interactieve vuurwerkshow te maken met alleen HTMl en CSS. Je kunt geen Id's en Classes gebruiken (alleen als het echt niet anders kan). Je moet gebruik maken van de CCS selectoren.
+In deze repo vind je een puur css vuurwerk show(tje). Het doel van de opdracht was om een interactieve vuurwerkshow te maken met alleen HTML en CSS. Je kunt geen id's en classes gebruiken (alleen als het echt niet anders kan). Je moet gebruik maken van de CCS selectoren.
 
 ![Eindresultaat](https://github.com/norakramer1/firework-show/blob/main/img/eind-res.png?raw=true)
 
 ## Bronnen
+
+Voor de gradients op de achtergrond.
 - https://cssgradient.io/
+
+Voor de transitions van de achtergronden op de buttons.
 - https://css-tricks.com/almanac/properties/t/transition/
+
+Voor de `calc()` functie van het vuurwerk.
+- https://codepen.io/shooft/pen/gOXoGNa
 
 ## Week 1
 De opdracht die ik gekozen heb om uit te werken is de vuurwerkshow. Ik wil 2 of 3 verschillende soorten vuurwerk laten zien met een `ul` waar de `li` van bewegen naar buiten en naar beneden vallen. Als interactie wil ik de kleur van de vuurwerkshow veranderen.
@@ -15,11 +22,11 @@ Ik ga als eerste aan de slag met keyframe animaties en custom properties om de o
 
 Mijn grootste uitdagingen liggen bij het animaties van de `li` en het positioneren van de elementen.
 
-De eerste schets van mijn ontwerp waren bergen waar het vuurwerk uit en achter vandaan kwam. Ik heb hier de fysieke schets iets netter gemaakt in Photoshop
+De eerste schets van mijn ontwerp waren bergen waar het vuurwerk uit en achter vandaan kwam. Ik heb hier de fysieke schets overgezet in Photoshop.
 
 ![eerste schets photoshop](https://github.com/norakramer1/firework-show/blob/main/img/eerste-schets-vuurwerk.png raw=true)
 
-Na de eerste week liep ik al aardig vast. Ik ben begonnen met een pijl de lucht in te krijgen, en dat is eigenlijk het enige wat lukte. Ik had moeite met het positioneren van het vuurwerk, de `li's` in een cirkel.
+Na de eerste week liep ik al aardig vast. Ik ben begonnen met een pijl de lucht in te krijgen, en dat is eigenlijk het enige wat lukte. Ik had moeite met het positioneren van het vuurwerk, de `li's` in een cirkel. Ik ben een tutorial gaan kijken waar alle `li's` apart gepositioneerd werden, ik heb hier uiteindelijk `calc()` voor gebruikt omdat je dan niet elk element apart een positie hoef te geven.
 ![Na de eerste week](https://github.com/norakramer1/firework-show/blob/main/img/eerste-week.png?raw=true)
 
 ## Week 2
@@ -70,7 +77,7 @@ Uitdagingen liggen bij het stylen van de pagina. Dit is op het moment erg saai. 
 - Bespreek je eindresultaat. ('praatje met plaatjes').
 Dit is het eindresultaat. Je ziet een gradient achtergrond met een maan die een klein beetje beweegt. Het vuurwerk kun je aansturen met de knoppen 'Start vuurwerk' lanceert het vuurwerk in regenboog kleuren. De andere knoppen veranderen het vuurwerk van kleur. Ook hebben de `li's` een box shadow om ze een beetje op te laten lichten. Op de achtergrond zie je ook nog een aantal sterren. Deze fonkelen door ze te vergroten. Ik wilde hierbij experimenteren door bijvoorbeeld`nth-of-type(3n)` te gebruiken, ik had `nth-of-type()` nog neit gebruikt om bijvoorbeeld alle 3e elementen aan te spreken en een soort mini berekeningen te maken. Dit wilde ik wel graag nog leren, alle sterren zijn divjes die ik op random plekken gepositioneert heb met `position: absolute` en `top: en left:`.
 
-![Week 4](https://github.com/norakramer1/firework-show/blob/main/img/week-4.png?raw=true)
+![Week 4](https://github.com/norakramer1/firework-show/blob/main/img/eind-res.png?raw=true)
 ![Week 4](https://github.com/norakramer1/firework-show/blob/main/img/week-4-1.png?raw=true)
 ![Week 4](https://github.com/norakramer1/firework-show/blob/main/img/week-4-2.png?raw=true)
 
